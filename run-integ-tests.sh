@@ -35,7 +35,7 @@ printf -- '\033[0mBootstrapping development environment...\n\033[37m';
 src/main/resources/bootstrap-development.sh 
 
 printf -- '\033[0mReplacing absolute paths in build.xml with relative paths...\n\033[37m';
-sed -i '' 's/.srv.metrics.torproject.org.metrics/./' build.xml 
+sed -i.bak 's/.srv.metrics.torproject.org.metrics/./' build.xml
 
 printf -- '\033[0mExtracting libraries, test descriptors, and expected .csv files...\n\033[37m';
 cp -a ../lib .
