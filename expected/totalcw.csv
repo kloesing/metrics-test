@@ -1,0 +1,9 @@
+valid_after_date,nickname,have_guard_flag,have_exit_flag,measured_sum_avg
+2019-02-05,longclaw,f,f,7986963
+2019-02-05,longclaw,f,t,2043360
+2019-02-05,longclaw,t,f,39412307
+2019-02-05,longclaw,t,t,11877846
+2019-02-05,,f,f,9158131
+2019-02-05,,f,t,2017025
+2019-02-05,,t,f,40804213
+2019-02-05,,t,t,13562061

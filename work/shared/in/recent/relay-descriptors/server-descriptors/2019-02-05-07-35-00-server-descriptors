@@ -1,0 +1,51 @@
+@type server-descriptor 1.0
+router Unnamed 138.204.171.103 443 0 0
+identity-ed25519
+-----BEGIN ED25519 CERT-----
+AQQABpI1AaULJ2KaZaQYg9bCRfhCb0BB+wxsYf9QdUETsxYdkYqBAQAgBACA1qHg
+kM+MtajVntslOwAoTnd8tNjXIQcku8EaUYdF6+GSjobiWYRK0mlTiNT9SbLO2d5D
+BXjhkhVr68Aae3o8zhBhHG/7oBiHi+pzmgFZYNJ30/pShnr8UNM4Gy24HQ4=
+-----END ED25519 CERT-----
+master-key-ed25519 gNah4JDPjLWo1Z7bJTsAKE53fLTY1yEHJLvBGlGHRes
+platform Tor 0.3.2.9 on Linux
+proto Cons=1-2 Desc=1-2 DirCache=1-2 HSDir=1-2 HSIntro=3-4 HSRend=1-2 Link=1-4 LinkAuth=1,3 Microdesc=1-2 Relay=1-2
+published 2019-02-05 06:21:24
+fingerprint 874A 5297 209A D589 EE5E 8951 55D7 5CC6 15A6 A64C
+uptime 30720816
+bandwidth 136192 136192 113455
+extra-info-digest 416891945723F99CE94F2C0328FCCD081AA30A3C w+9mbNpEj4FzeaSf+0NluE/JJNvfFtYQC/jhK3ruiAw
+onion-key
+-----BEGIN RSA PUBLIC KEY-----
+MIGJAoGBALe5lez0kDLENYUsGrbfXLn3Bwr4IIlcR8WKcyQlXq6kk9SFNFqzQ9l+
+KuCEeIdq3kZSrKKEHkFiTFR552YT0Prnjbxl38PoJEsLpLQDY/QV0dsh17oJydgn
+njKz2EEXSzAih70UMOlFZRpFisZIX4LxcfD3hSQjmchAdFUdpGUxAgMBAAE=
+-----END RSA PUBLIC KEY-----
+signing-key
+-----BEGIN RSA PUBLIC KEY-----
+MIGJAoGBAKC27dAB/8lXvQNNfCAAqnBjRKAgM+Y0l085ErhMKy8rtpMgFb74c/je
+tKVsKmOQ8CaqekQ5xditmuRm/sgmw5TInAjBvUIGJ8raG9TKJKdpERc3DHaXXbg6
++p4fKxWyGBqOCtYMY2ghkR56cicowIFkkSREta4OT87bRiyxjqz1AgMBAAE=
+-----END RSA PUBLIC KEY-----
+onion-key-crosscert
+-----BEGIN CROSSCERT-----
+S7IWxWw8Knrwa7fKV8SzVqoiZiOZhu+xjguSY7PgP59BQAW5W+ezuHI/hyhsYk9Z
+1VJvVNiIqM/Iem5E5aXpjLDt0i3j5QsNMxiG9VVq4ZLJAIi+dhyImB0yaKbMf5iL
+Xu4FnHctiJ5XFwNA8SURGeK/Mcj8wu4lNflKmDzSkVc=
+-----END CROSSCERT-----
+ntor-onion-key-crosscert 0
+-----BEGIN ED25519 CERT-----
+AQoABpPHAYDWoeCQz4y1qNWe2yU7AChOd3y02NchByS7wRpRh0XrAOl5ey3oZXyF
+rijuoGTJgLsOCk//qm+lyW2i5uAifSmPAxQJmNq7GowOiADqnTzOCFbuPA0lbOrn
+UHUvq7cpGgk=
+-----END ED25519 CERT-----
+hidden-service-dir
+ntor-onion-key bTI1IOxm1gJGvaL/c+pNSzqeUYEajuB4vFEDBGmdHkk=
+reject *:*
+tunnelled-dir-server
+router-sig-ed25519 jKySrt107BL50eN6RhPtWgNxAauXy+/sJ9WO/DVt8/GY371slLmX7lbNf+XyjruMsPjz5lUftzNHXTPUtdRLBw
+router-signature
+-----BEGIN SIGNATURE-----
+cBZZkRMUsAvH5IlkZY22rb078mxEJo5T+N81rye1o47T8irrMuSAMx7JrsGK52Xu
+nen70o7XL+U3IPtngGgs5Lx2VhMUQ/GK4X+RdfQiNwEwp5OFcfXnu5FomTL8X7pH
+FDJHyAHTFs3wCxS77kXdPIIryvCl3eBb1GDup4+EPEA=
+-----END SIGNATURE-----
