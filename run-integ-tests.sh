@@ -21,6 +21,8 @@ done
 printf -- 'Cloning metrics-web Git repository into metrics-web/ subdirectory...\n\033[37m';
 rm -rf metrics-web/
 git clone https://git.torproject.org/metrics-web
+# In order to test another branch than master, use the following line:
+#git clone --branch some-branch https://git.torproject.org/user/somebody/metrics-web
 cd metrics-web/
 
 ## Use some of the following to test an existing metrics-web clone.
@@ -34,8 +36,8 @@ cd metrics-web/
 printf -- '\033[0mBootstrapping development environment...\n\033[37m';
 src/main/resources/bootstrap-development.sh 
 
-printf -- '\033[0mReplacing absolute paths in build.xml with relative paths...\n\033[37m';
-sed -i.bak 's/.srv.metrics.torproject.org.metrics/./' build.xml
+printf -- '\033[0mRemoving descriptor collection step...\n\033[37m';
+sed -i.bak 's/.*collectdescs.*//' src/main/java/org/torproject/metrics/stats/main/Main.java
 
 printf -- '\033[0mExtracting libraries, test descriptors, and expected .csv files...\n\033[37m';
 cp -a ../lib .
@@ -68,35 +70,10 @@ psql -f src/main/sql/webstats/init-webstats.sql webstats
 psql -f src/main/sql/onionperf/init-onionperf.sql onionperf
 psql -f src/main/sql/servers/init-ipv6servers.sql ipv6servers
 
-printf -- '\033[0mRunning the connbidirect module...\n\033[37m';
-ant connbidirect
-
-printf -- '\033[0mRunning the onionperf module...\n\033[37m';
-ant onionperf
-
-printf -- '\033[0mRunning the bwhist module...\n\033[37m';
-ant bwhist
-
-printf -- '\033[0mRunning the advbwdist module...\n\033[37m';
-ant advbwdist
-
-printf -- '\033[0mRunning the hidserv module...\n\033[37m';
-ant hidserv
-
-printf -- '\033[0mRunning the clients module...\n\033[37m';
-ant clients
-
-printf -- '\033[0mRunning the servers module...\n\033[37m';
-ant servers
-
-printf -- '\033[0mRunning the webstats module...\n\033[37m';
-ant webstats
-
-printf -- '\033[0mRunning the totalcw module...\n\033[37m';
-ant totalcw
-
-printf -- '\033[0mGathering all generated .csv files...\n\033[37m';
-ant make-data-available
+printf -- '\033[0mRunning modules...\n\033[37m';
+java -DLOGBASE=work/modules/logs/ -Dmetrics.basedir=. -jar generated/dist/metrics-web-1.2.0-dev.jar
+# If database user and password are not "metrics" and "password", use the following line:
+#java -DLOGBASE=work/modules/logs/ -Dmetrics.basedir=. -Dmetrics.dbuser=dbuser -Dmetrics.dbpass=dbpass -jar generated/dist/metrics-web-1.2.0-dev.jar
 
 printf -- '\033[0mComparing expected to generated .csv files...\n\033[37m';
 diff -Nur ../expected shared/stats
