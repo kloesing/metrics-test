@@ -40,7 +40,6 @@ sed -i.bak 's/.srv.metrics.torproject.org.metrics/./' build.xml
 printf -- '\033[0mExtracting libraries, test descriptors, and expected .csv files...\n\033[37m';
 cp -a ../lib .
 cp -a ../work .
-cp -a ../expected .
 
 printf -- '\033[0mGenerating a .jar file for execution...\n\033[37m';
 ant jar
@@ -100,7 +99,7 @@ printf -- '\033[0mGathering all generated .csv files...\n\033[37m';
 ant make-data-available
 
 printf -- '\033[0mComparing expected to generated .csv files...\n\033[37m';
-diff -Nur expected shared/stats
+diff -Nur ../expected shared/stats
 
 printf -- '\033[0mTerminating...\n';
 
