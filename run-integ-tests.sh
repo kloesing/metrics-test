@@ -20,9 +20,10 @@ done
 
 printf -- 'Cloning metrics-web Git repository into metrics-web/ subdirectory...\n\033[37m';
 rm -rf metrics-web/
-git clone https://git.torproject.org/metrics-web
+#git clone https://git.torproject.org/metrics-web
 # In order to test another branch than master, use the following line:
 #git clone --branch some-branch https://git.torproject.org/user/somebody/metrics-web
+git clone --branch task-29696 https://git.torproject.org/user/karsten/metrics-web
 cd metrics-web/
 
 ## Use some of the following to test an existing metrics-web clone.
