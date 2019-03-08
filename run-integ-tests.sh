@@ -55,12 +55,12 @@ dropdb --if-exists onionperf
 dropdb --if-exists ipv6servers
 
 printf -- '\033[0m(Re-)creating databases...\n\033[37m';
-createdb userstats
-createdb tordir
-createdb totalcw
-createdb webstats
-createdb onionperf
-createdb ipv6servers
+createdb --encoding=UTF8 --locale=C --template=template0 userstats
+createdb --encoding=UTF8 --locale=C --template=template0 tordir
+createdb --encoding=UTF8 --locale=C --template=template0 totalcw
+createdb --encoding=UTF8 --locale=C --template=template0 webstats
+createdb --encoding=UTF8 --locale=C --template=template0 onionperf
+createdb --encoding=UTF8 --locale=C --template=template0 ipv6servers
 
 printf -- '\033[0mInitializing databases...\n\033[37m';
 psql -f src/main/sql/clients/init-userstats.sql userstats
