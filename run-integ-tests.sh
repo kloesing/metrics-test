@@ -39,7 +39,7 @@ src/main/resources/bootstrap-development.sh
 printf -- '\033[0mRemoving descriptor collection step...\n\033[37m';
 sed -i.bak 's/.*collectdescs.*//' src/main/java/org/torproject/metrics/stats/main/Main.java
 
-printf -- '\033[0mExtracting libraries, test descriptors, and expected .csv files...\n\033[37m';
+printf -- '\033[0mCopying libraries and test descriptors...\n\033[37m';
 cp -a ../lib .
 cp -a ../work .
 
