@@ -43,6 +43,9 @@ printf -- '\033[0mCopying libraries and test descriptors...\n\033[37m';
 cp -a ../lib .
 cp -a ../work .
 
+printf -- '\033[0mRetrieving libraries...\n\033[37m';
+ant resolve
+
 printf -- '\033[0mGenerating a .jar file for execution...\n\033[37m';
 ant jar
 
