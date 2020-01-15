@@ -74,9 +74,9 @@ psql -f src/main/sql/onionperf/init-onionperf.sql onionperf
 psql -f src/main/sql/servers/init-ipv6servers.sql ipv6servers
 
 printf -- '\033[0mRunning modules...\n\033[37m';
-java -DLOGBASE=work/modules/logs/ -Dmetrics.basedir=. -jar generated/dist/metrics-web-1.2.0-dev.jar
+java -DLOGBASE=work/modules/logs/ -Dmetrics.basedir=. -jar generated/dist/metrics-web-1.3.0-dev.jar
 # If database user and password are not "metrics" and "password", use the following line:
-#java -DLOGBASE=work/modules/logs/ -Dmetrics.basedir=. -Dmetrics.dbuser=dbuser -Dmetrics.dbpass=dbpass -jar generated/dist/metrics-web-1.2.0-dev.jar
+#java -DLOGBASE=work/modules/logs/ -Dmetrics.basedir=. -Dmetrics.dbuser=dbuser -Dmetrics.dbpass=dbpass -jar generated/dist/metrics-web-1.3.0-dev.jar
 
 printf -- '\033[0mComparing expected to generated .csv files...\n\033[37m';
 diff -Nur ../expected shared/stats
